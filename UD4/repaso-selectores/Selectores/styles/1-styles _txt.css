@@ -106,21 +106,33 @@ p.entradilla{
 
 /* Todos los párrafos del primer article de un conjunto de hermanos
    color del texto darkblue  */
-
+article:first-of-type{
+   color: darkblue;
+}
 
 /* Todos los strong que esten dentro de párrafos
    color del texto black*/
+p strong{
+   color: black;
+}
 
 /* para todos los enlaces que sean hermanos generales de un h2, pero solo en los article 
   color del subrayado darkgreen*/
-
+article h2~a{
+   text-decoration-color: darkgreen;
+}
 
 /* Todos los enlaces que estén dentro de párrafos con clase "entradilla" 
    sin decoración (subrayado)
    color del texto orange
    negrita
    fuente 1.5 veces el tamaño de la letra M de la fuente del elemento root*/
-
+p.entradilla a{
+   text-decoration: none;
+   color: orange;
+   font-weight: bold;
+   font-size: 1.5rem
+}
 
 /* todos los enlaces a páginas https, antes del enlace debe aparecer una flecha a la derecha , \027af, de color darkgreen */
 
