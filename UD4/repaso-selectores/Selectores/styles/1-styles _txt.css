@@ -40,42 +40,69 @@ footer{
   borde redondeado de 10px
   padding de 2 veces el tamaño de la letra M de la fuente del elemento root
  */
-
+article{
+   background-color: antiquewhite;
+   border: 1px solid black;
+   border-radius: 10px;
+   padding: 2rem;
+}
 
 /* para todos los aside
   color de fondo beige
   borde punteado de 2px de color negro
   borde redondeado de 10px
   */
-
+aside{
+   background-color: beige;
+   border: 2px dotted black;
+   border-radius: 10px;
+}
 
 /* Todos los parrafos de la pagina de color #666*/
-
+p{
+   color: #666;
+}
 
 /* Todos los elementos h1 de la pagina
    negrita
    tamaño 3 veces el tamaño de la letra M de la fuente del elemento root
    texto centrado
 */
-
+h1{
+   font-weight: bold;
+   font-size: 3rem;
+   text-align: center;
+}
 
 /* todos los elementos h2 de la página 
    tamaño fuente 2 veces el tamaño de la letra M de la fuente del elemento root
    Centrado*/
-
+h2{
+   font-size: 2rem;
+   text-align: center;
+}
 
 /* la primera letra del párrafo contiguo a todos los h2 
     tamaño del texto 3 veces el tamaño de la letra M de la fuente del elemento root
 */
+h2 +p::first-letter{
+   font-size: 3rem;
+}
 
 /* Segundo párrafo de los article 
    borde inferior punteado de 1px de color #666
 */
-
+article >p:nth-of-type(2){
+   border-bottom: 1px dotted #666;
+}
 
 /* Todos los párrafos de clase "entradilla"
    Negrita
    Tamaño de la fuente 1.5 veces el tamaño de la letra M de la fuente del elemento root*/
+p.entradilla{
+   font-weight: bold;
+   font-size: 1.5rem;
+}
 
 /* Todos los párrafos del primer article de un conjunto de hermanos
    color del texto darkblue  */
