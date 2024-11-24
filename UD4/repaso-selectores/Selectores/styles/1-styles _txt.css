@@ -135,8 +135,14 @@ p.entradilla a{
 }
 
 /* todos los enlaces a páginas https, antes del enlace debe aparecer una flecha a la derecha , \027af, de color darkgreen */
+a[href^="https://"]::before{
+   content: "\027af";
+   color: darkgreen;
+}
 
 /* para todos los párrafos de los artículos, al seleccionarlos, color de fondo rgba(255, 0, 0, 0.827) */
-
+article p::selection{
+   background-color: rgba(255, 0, 0, 0.827);
+}
 
 /* para el párrafos del pie con id autor, antes y después, poner el símbolo de copyright "\00A9" */
