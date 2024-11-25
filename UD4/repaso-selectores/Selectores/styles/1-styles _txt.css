@@ -106,7 +106,7 @@ p.entradilla{
 
 /* Todos los párrafos del primer article de un conjunto de hermanos
    color del texto darkblue  */
-article:first-of-type{
+article:first-of-type p{
    color: darkblue;
 }
 
@@ -146,3 +146,7 @@ article p::selection{
 }
 
 /* para el párrafos del pie con id autor, antes y después, poner el símbolo de copyright "\00A9" */
+footer p#autor::after, 
+footer p#autor::before{
+   content: "\00A9";
+}
