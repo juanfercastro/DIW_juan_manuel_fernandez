@@ -10,20 +10,30 @@
     --color-texto: white;
     --bgcolor: rgb(187, 187, 187);
     font-size: 14px;
-    line-height: 1.5;
 }
 
 header{
     background-color: var(--bgcolor);
     color: var(--color-texto);
+    margin-bottom: 1rem;
+    grid-column: 1/4
 }
 
 body{
     width: 100vw;
     min-height: 100vh;
     display: grid;
+    grid-template-columns: auto 1fr auto;
     grid-template-rows: auto 1fr auto;
-    line-height: 1.5rem;
+}
+
+main{
+    display: flex;
+    gap: 1rem;
+}
+
+ul:not(#content ul){
+    list-style: none;
 }
 
 nav{
@@ -31,26 +41,69 @@ nav{
     border-radius: 10px;
     box-shadow: 10px 10px 5px #888888;
     margin: .5rem;
+    height: fit-content;
 }
 
 nav li{
     border: 1px solid #dddddd;
     border-radius: 4px;
     padding: 8px 16px 8px 16px;
+    margin: 0 auto;
 }
 
-nav li a{
+nav a{
     text-decoration: none;
+}
+
+nav ul li:first-child{
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+
+nav ul li:last-child{
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+a{
     color: var(--bgcolor);
     font-weight: bold;
 }
 
-nav li:hover{
-    background-color: #a9a9a9;
+h2+p:first-of-type a{
+    color: black;
 }
 
-nav li:hover a{
-    color: var(--color-texto);
+#content{
+    display: grid;
+    grid-template-areas: "left right";
+    gap: 1rem;
+    line-height: 1.5rem;
+}
+
+#content ul{
+    margin: 1rem 2.5rem;
+    color: var(--bgcolor);
+}
+
+#content p{
+    margin: .75rem 0;
+}
+
+#right, #left{
+    min-width: 49%;
+}
+
+#left p:nth-of-type(2) a{
+    font-style: italic;
+}
+
+p:not(h2+p:first-of-type, footer p){
+    color: var(--bgcolor);
+}
+
+strong{
+    color: black;
 }
 
 h2+p:first-of-type{
@@ -59,10 +112,25 @@ h2+p:first-of-type{
 
 aside{
     background-color: rgba(220, 220, 220, 0.425);
+    border: 2px solid var(--bgcolor);
+    border-radius: 10px;
+    margin: .5rem;
+    padding: .5rem;
+    grid-column: 3/4;
+    height: fit-content;
 }
 
 footer{
     background-color: var(--bgcolor);
     color: var(--color-texto);
     padding-bottom: 1rem;
+    grid-column: 1/4;
+}
+
+nav li:hover{
+    background-color: #a9a9a9;
+}
+
+nav li:hover a{
+    color: var(--color-texto);
 }
