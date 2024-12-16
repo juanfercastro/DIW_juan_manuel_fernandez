@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* Compatibilidad con firefox */
+
+.skipper-anchor, .heading-anchor {
+  display: none;
+}
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+
+
+p {
+  padding: 0.5rem 0;
+}
+
+
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header, footer {
+  padding: .5rem 2rem;
+}
+
+/**** Estilos del menú ****/
+
+.activa {
+  font-weight: bold;
+}
+
+/* Estilos de la línea al pasar sobre cada opción del menu*/
+#menu xx {
+  width: 0;
+  height: 4px;
+  border-radius: 10px;
+  background-color: var(--bg-secundario);
+  transition: var(--transicion);
+}
+
+/*** Estilos del area personal - perfil */
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+/*=============================================
+=            Estilos del cuerpo - card           =
+=============================================*/
+
+/* estilos del main*/
+main {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+
+
+/*=============================================
+=            Estilos de las cards            =
+=============================================*/
+
+
+
+/* estilos de las card */
+
+
+
+/* estilos del contenedor de la imagen */
+
+
+
+/* Efectos de la card */
+
+
+/* para todas las card IMPARES poner sobre la misma,fuente 
+3 veces la fuente raíz la imagen del edificio. 
+Este representa proyecto en construcción*/
+
+.card XXXXXXX {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: gold;
+  text-shadow: 4px 4px 5px black;
+}
+
+
+/* Estilos de los botones */
+
+
+
+
+
+/*=====  End of Estilos del cuerpo - card ======*/
+
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+
+
+/*=====  End of Estilos del footer  ======*/
+
+
+
+/*=============================================
+=            Estilos de las media queries            =
+=============================================*/
+
+
+
+/*=====  End of Estilos de las media queries  ======*/

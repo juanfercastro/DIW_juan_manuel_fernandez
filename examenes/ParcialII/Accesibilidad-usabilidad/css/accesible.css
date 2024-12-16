@@ -1,0 +1,44 @@
+@import "./min.css";
+
+/*=============================================
+=            Otros estilos            =
+=============================================*/
+.destacado {
+  color: var(--color-destacados);
+  text-decoration: underline;
+}
+
+.principal .title {
+  background-color: #A61749;
+}
+
+
+/*=====  End of Otros estilos  ======*/
+
+
+
+/*=============================================
+=            Estilos role tooltip del login        =
+=============================================*/
+
+.tooltip {
+  display: none;
+  color: #333;
+  background: bisque;
+  padding: 1rem;
+  box-shadow: 4px 4px 4px;
+}
+
+input:focus+.tooltip {}
+
+/*=====  End of Estilos role tooltip  ======*/
+
+
+
+/*=============================================
+=     Estilos de validación de campos            =
+=============================================*/
+
+
+
+/*=====  End of Estilos de los campos  ======*/

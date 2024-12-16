@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIW04 Plantilla CSS</title>
+  <link rel="stylesheet" href="css/accesible.css">
+</head>
+
+<body>
+  <header class="cabecera">
+    <section id="logo">
+      <a href="#" id="logo__icono"><img src="./images/logo.jpeg" alt=""></a>
+      <h2><a href="http://www.educacion.gob.es">www.educacion.gob.es</a></h2>
+    </section>
+    <nav id="menu">
+      <ul>
+        <li><a href="#" title="">Inicio</a></li><!--página actual-->
+        <li><a href="#" title="">Información</a></li>
+        <li><a href="#" title="">Cursos</a></li>
+        <li><a href="#" title="">Alumnos</a></li>
+        <li><a href="#" title="">Ayuda</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="borde"></div>
+  <section class="container">
+    <section id="main" class="columna1">
+      <header class="title boxed">
+        <h3><span>¡Bienvenido a TodoFP!</span></h3>
+        <h4 class="date"><span class="month">Oct.</span> <span class="day">10</span><span class="year">,
+            2011</span></h4>
+      </header>
+      <section id="welcome">
+        <h4 class="story figure"><img src="images/destacados_fp_a_distancia_branco.png" class="left"></h4>
+        <p><strong>FP a distancia</strong> Esta oferta está
+          dirigida especialmente a aquellas personas que,
+          por diferentes razones (no solo laborales), no
+          pueden cursar en los centros educativos y en el
+          horario presencial, la <a href="http://todofp.es/todofp">Formación
+            Profesional</a>. Por tanto,
+          mayoritariamente será el colectivo de personas
+          adultas el destinatario de esta modalidad de
+          enseñanza.
+          Toda la información desde la web: <a href="http://www.educacion.gob.es/fponline.html">FP
+            online</a>.<em>¡¡Matricúlate!!</em></p>
+        <p class="meta">Realizado por Manuel Vieites <a href="#">TodoFP</a> |
+          <a href="#">Educación</a>
+        </p>
+      </section>
+      <!-- end #welcome -->
+      <section id="example" class="post">
+        <header class="title boxed">
+          <h2><span>DIW04. Hojas de estilos.</span></h2>
+          <h3 class="date"><span class="month">Oct.</span> <span class="day">10</span><span class="year">,
+              2011</span></h3>
+        </header>
+        <blockquote class="story">
+          <p>&ldquo;<strong class="destacado">EDU/2887/2010, de 2 de noviembre</strong>,
+            por la que se establece el currículo del ciclo
+            formativo de Grado Superior correspondiente al
+            título de Técnico Superior en Desarrollo de
+            Aplicaciones Web.&rdquo;</p>
+        </blockquote>
+        <p>Técnicas, procedimiento y actitudes relacionadas:</p>
+        <ol>
+          <li>Crear y vincular hojas de estilo</li>
+          <li>Crear y vincular hojas de estilo en cascada
+            externa</li>
+        </ol>
+        <p>Conceptos soporte relacionados:</p>
+        <ol>
+          <li>Estilos en línea basados en etiquetas y en
+            clases</li>
+          <li>Hojas de estilo auditivas</li>
+          <li>Hojas de estilo para imprimir</li>
+          <li>Herramientas y test de verificación</li>
+        </ol>
+        <div class="meta">
+          <p>Realizado por Manuel Vieites <a href="#">DIW</a> | <a href="#">TodoFP</a></p>
+        </div>
+      </section>
+      <!-- end #example -->
+    </section>
+
+    <!-- fin columna1-->
+    <section id="sidebar" class="columna2">
+      <section id="login">
+        <h2 class="title">Area de usuarios</h2>
+        <form class="formulario" action="#" id="login">
+          <label for="user">Usuario:</label>
+          <!-- longitúd mínima 6 máxima 14-->
+          <input id="username" type="email" name="user" class="campo" placeholder="pedro@todofp.es"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+          <label for="">Contraseña:</label>
+          <!-- 
+          Reglas de la contraseña:
+            Mínimo 8 caracteres, máximo 15
+            Admite letras en mayúsculas, minúsculas, números y los caracteres especiales: &, @, !, $, %, *, ?
+              y$.
+            >-->
+          <input id="password" type="password" name="password" class="campo" />
+          <input id="inputsubmit1" type="submit" name="inputsubmit1" value="Acceder">
+          <p><a href="#">¿Olvidaste la contraseña?</a></p>
+        </form>
+      </section>
+      <!-- end #login -->
+
+      <div id="updates">
+        <h2 class="title">Unidades de trabajo</h2>
+        <!-- lista últimas tareas-->
+        <div class="lista">
+          <h3>DIW01, 2011</h3>
+          <p><a href="#">Planificación de interfaces
+              gráficas.&#8230;</a></p>
+          <h3>DIW02, 2011</h3>
+          <p><a href="#">Accesibilidad en la Web.&#8230;</a></p>
+          <h3>DIW03, 2011</h3>
+          <p><a href="#">Usabilidad en la Web.&#8230;</a></p>
+          <h3>DIW04, 2011</h3>
+          <p><a href="#">Hojas de estilos.&#8230;</a></p>
+          <h3>DIW05, 2011</h3>
+          <p><a href="#">Contenidos multimedia en la Web:
+              Imágenes.&#8230;</a></p>
+        </div>
+      </div>
+      <!-- end #updates -->
+    </section>
+    <!-- end main - .columna2 -->
+    <div id="sidebar2" class="columna3 principal">
+      <h2 class="title">Webs de Interés</h2>
+      <nav>
+        <ul class="content">
+          <li><a href="#">TodoFP</a></li>
+          <li><a href="#"></a>online</li>
+          <li><a href="">Platega </a></li>
+          <li><a href="#">IES San Clemente </a></li>
+        </ul>
+      </nav>
+      <!-- end #websinteres -->
+      <figure class="figure"><img src="images/DIW04_SOL_TAR_R00.jpg" alt=""></figure>
+    </div>
+  </section>
+  <!-- end #sidebar2 -->
+  <!-- end #container -->
+  <footer id="footer" class="borde">
+    <p id="legal">Copyright &copy; 2022 TodoFP. Todos los derechos
+      reservados. Diseñado por <a href="http://www.educacion.gob.es">www.educacion.gob.es</a>.
+      Modificado por Marina Vega Vázquez</p>
+  </footer>
+</body>
+
+</html>

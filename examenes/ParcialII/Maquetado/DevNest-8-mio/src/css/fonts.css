@@ -1,0 +1,17 @@
+
+/*=============================================
+=            Fuentes            =
+=============================================*/
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("../fonts/Merriweather_Sans/MerriweatherSans-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins/Poppins-Black.ttf") format("truetype");
+}
+
+/*=====  End of Fuentes  ======*/
+

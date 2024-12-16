@@ -1,0 +1,178 @@
+@charset "UTF-8";
+@import url("./fonts.css");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+/* Compatibilidad con firefox */
+
+.skipper-anchor, .heading-anchor {
+  display: none;
+}
+
+:root{
+  --color-texto-primario: #011126;
+  --color-texto-secundario: #334647d3;
+  --bg-primario: #D7D9D8;
+  --bg-secundario: #85a2a64e;
+  --color-boton1: #99F2D9;
+  --color-boton2: #FFDDB6;
+  --size-h1: 2.4rem;
+  --size-h2: 1.9rem;
+  --size-h3: 1.4rem;
+  --transicion: 0.5s ease-in-out;
+  font-size: 14px;
+}
+
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+body{
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+p {
+  padding: 0.5rem 0;
+}
+
+h2{
+  color: var(--color-texto-secundario);
+  font-size: var(--size-h2);
+}
+
+h3{
+  color: var(--color-texto-secundario);
+  font-size: var(--size-h3);
+}
+
+h2, h3{
+  font-family: "Merriweather";
+}
+
+aside img{
+  max-width: 30px;
+}
+
+footer{
+  background-color: var(--bg-primario);
+  color: var(--color-texto-secundario);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header{
+  background-color: var(--bg-primario);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header img{
+  max-width: 100px;
+}
+
+/**** Estilos del menú ****/
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+nav a{
+  text-decoration: none;
+  color: #011126;
+  font-size: 1.2rem;
+}
+
+.activa {
+  font-weight: bold;
+}
+
+/* Estilos de la línea al pasar sobre cada opción del menu*/
+#menu xx {
+  width: 0;
+  height: 4px;
+  border-radius: 10px;
+  background-color: var(--bg-secundario);
+  transition: var(--transicion);
+}
+
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+/*=============================================
+=            Estilos del cuerpo - card           =
+=============================================*/
+
+/* estilos del main*/
+main {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+/* estilos de las card */
+
+
+
+/* estilos del contenedor de la imagen */
+
+
+
+/* Efectos de la card */
+
+
+
+/* estilos del elemento con id registros */
+
+/* Topos los td menos el último borde derecho 1px */
+
+
+/* Estilos de los botones */
+
+
+
+/* Emplea la pseudoclase para indicar el color de fondo y los cambios de color
+de fondo y color letra al pasar sobre el para los botones */
+
+
+/*=====  End of Estilos del cuerpo - card ======*/
+
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+
+
+/*=====  End of Estilos del footer  ======*/
+
+
+
+/*=============================================
+=            Estilos de las media queries            =
+=============================================*/
+
+
+
+/*=====  End of Estilos de las media queries  ======*/
