@@ -1,0 +1,108 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/static/Roboto-Regulat.ttf") format(truetype);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Roboto;
+  src: url("../../assets/fonts/Roboto/static/Roboto-Bold.ttf") format(truetype);
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  font-family: Source_Code_Pro;
+  src: url("../../assets/fonts/Roboto/static/SourceCodePro-Regular.ttf") format(truetype);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Source_Code_Pro;
+  src: url("../../assets/fonts/Roboto/static/SourceCodePro-Bold.ttf") format(truetype);
+  font-style: normal;
+  font-weight: bold;
+}
+:root {
+  font: 14px/1.6 "Source_Cope_Pro", Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+a {
+  text-decoration: #cf649a;
+  color: #cf649a;
+}
+a:hover {
+  color: blue;
+}
+header a {
+  font-weight: 500;
+}
+
+ul, li {
+  margin-left: 1rem;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.footer, header {
+  background-color: black;
+  width: 100%;
+  height: max-content;
+  padding: 0.5rem;
+}
+
+header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+header h1 {
+  color: #fff;
+  text-align: center;
+  font-family: "Roboto", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 3rem;
+}
+header h1 + h2 {
+  color: #cf649a;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  color: #fff;
+}
+.footer__redes {
+  list-style: none;
+  width: max-content;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 0.5rem;
+}
+.footer svg {
+  max-width: 2rem;
+  width: 100%;
+  height: auto;
+  fill: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */
