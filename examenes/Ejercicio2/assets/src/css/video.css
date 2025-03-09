@@ -1,0 +1,31 @@
+/*
+   Diseño de interfaces Web
+   Examen 2ª evaluación
+   Ejercicio 3
+
+   Estilos del video y sus subtitulos 
+   Autor:  
+   Fecha: 11/03/2024
+
+   Nombre del fichero: video.css
+
+*/
+/*================= Estilos Video =================*/
+
+/* Para todas las escenas
+color fondo --clr-fondo
+color texto blanco
+fuente 1rem "Gill Sans"
+relleno de 2rem*/
+
+/* Para la escena con la clase titulo fuente 3rem
+Color fondo --clr-fondo-cabecera-pie
+color texto --clr-fondo*/
+
+/* Para la escena con voz narrador
+fuente 1.1rem "Myriad Pro"
+Color texto amarillo*/
+
+/* Para la escena con voz narrador
+fuente Helvetica
+Color fondo --clr-fondo-alternativo*/

@@ -1,0 +1,91 @@
+/*
+   Diseño de interfaces Web
+   Examen 2ª evaluación
+   Ejercicio 1
+
+   Estilos del video y sus subtitulos 
+   Autor: 
+   Fecha: 11/03/2024
+
+   Nombre del fichero: modal.css
+
+*/
+/*=============================================
+=            Estilos de la ventana modal donar            =
+=============================================*/
+dialog {
+  animation: aparecer 0.5s ease-in-out;
+  -o-animation: aparecer 0.5s ease-in-out;
+  -moz-animation: aparecer 0.5s ease-in-out;
+  -webkit-animation: aparecer 0.5s ease-in-out;
+  --color: #064f60;
+}
+@keyframes aparecer {
+  from {
+    top: -50vw;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+dialog::backdrop {
+  background-color: #078dab6a;
+}
+
+dialog h2 svg {
+  fill: var(--color);
+}
+
+.dialog__btn--cerrar {
+  border: none;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 1.5rem;
+  background-color: #fafafa;
+}
+
+/*=============================================
+=            Estilos del formulario            =
+=============================================*/
+
+.form__campo input[type="radio"]:not(:first-of-type) {
+  margin-left: 1rem;
+}
+
+.form__campo input[type="radio"]:checked + label {
+  font-weight: 600;
+}
+.cantidad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 80px);
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.cantidad__opcion {
+  text-align: left;
+  color: #222832;
+  /* box-sizing: border-box;
+  flex-shrink: 0;
+  padding: 5px; */
+}
+.cantidad__opcion--radio {
+  display: none;
+}
+
+.cantidad__opcion--radio:checked ~ label {
+  background-color: #c6c6c6;
+  color: #064f60;
+  border-color: #064f60;
+  font-weight: 500;
+}
+
+#destino input:not(:placeholder-shown):invalid {
+  background-color: orange;
+}
+.form__btn {
+  width: 100%;
+}
+/*=====  End of Estilos de la ventana modal donar  ======*/

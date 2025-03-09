@@ -1,0 +1,55 @@
+/*
+   Diseño de interfaces Web
+   Examen 2ª evaluación
+   Ejercicio 3
+
+   Estilos del video y sus subtitulos 
+   Autor:  
+   Fecha: 11/03/2024
+
+   Nombre del fichero: video.css
+
+*/
+/*================= Estilos Video =================*/
+
+/* Para todas las escenas
+color fondo --clr-fondo
+color texto blanco
+fuente 1rem "Gill Sans"
+relleno de 2rem*/
+::cue {
+  background-color: var(--clr-fondo);
+  color: white;
+  font-size: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  fill: 2rem;
+}
+
+/* Para la escena con la clase titulo fuente 3rem
+Color fondo --clr-fondo-cabecera-pie
+color texto --clr-fondo*/
+/* ::cue(Titulo) { */
+::cue(.titulo) {
+  font-size: 3rem;
+  background-color: var(--clr-fondo-cabecera-pie);
+  color: var(--clr-fondo);
+}
+
+/* Para la escena con voz narrador
+fuente 1.1rem "Myriad Pro"
+Color texto amarillo*/
+/* ::cue(Escena1,Escena2,Escena3,Escena4,Escena5){ */
+::cue(v[voice="narrador"]) {
+  font-size: 1.1rem;
+  color: yellow;
+  font-family: "Myriad Pro";
+}
+
+/* Para la escena con voz voluntario
+fuente Helvetica
+Color fondo --clr-fondo-alternativo*/
+/* ::cue(Escena6) { */
+::cue(v[voice="voluntario"]) {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--clr-fondo-alternativo);
+}

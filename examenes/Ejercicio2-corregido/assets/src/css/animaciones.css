@@ -1,0 +1,81 @@
+/*
+   Diseño de interfaces Web
+   Examen 2ª evaluación
+   Ejercicio 2
+
+   Estilos del video y sus subtitulos 
+   Autor: 
+   Fecha: 11/03/2024
+
+   Nombre del fichero: animaciones.css
+
+*/
+/*
+Estilos de las animaciones
+*/
+/* Crea una animación llamada latir para el latido del corazón,
+el corazón se escalará 1.4 veces su tamaño al 50% de la animación
+Crea las reglas de animación para que sea compatible con todos los navegadores*/
+
+@-webkit-keyframes latir {
+  50% {
+    transform: scale(1.4);
+  }
+}
+@-moz-keyframes latir {
+  50% {
+    transform: scale(1.4);
+  }
+}
+@-o-keyframes latir {
+  50% {
+    transform: scale(1.4);
+  }
+}
+@keyframes latir {
+  50% {
+    transform: scale(1.4);
+  }
+}
+/* Crea una animación para cambiar el gradient de la página web, llámale gradient
+Debemos hacer que se desplacen los colores del gradiente desde 5% en el eje X y 0% en el Y
+hasta lo mismo en el fin de la animación, donde en el 50% se posicionará en el 96% en el eje X
+y 100% en el Y.
+Crea las reglas de animación para que sea compatible con todos los navegadores*/
+/* Animación del gradiente de la página*/
+@-webkit-keyframes gradient {
+  0%,
+  100% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 96% 100%;
+  }
+}
+@-o-keyframes gradient {
+  0%,
+  100% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 96% 100%;
+  }
+}
+@-moz-keyframes gradient {
+  0%,
+  100% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 96% 100%;
+  }
+}
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 5% 0%;
+  }
+  50% {
+    background-position: 96% 100%;
+  }
+}

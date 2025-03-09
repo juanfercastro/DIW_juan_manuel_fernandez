@@ -1,0 +1,238 @@
+@import "base.css";
+@import "animaciones.css";
+@import "modal.css";
+/*
+   Diseño de interfaces Web
+   Examen 2ª evaluación
+   Ejercicio 2
+   
+   Estilos del video y sus subtitulos 
+   Autor:   
+   Fecha: 11/03/2024
+
+   Nombre del fichero: style.css
+
+*/
+/*
+Para el cuerpo
+Importante, Recuerda! la página debe estar maquetada de forma que el pié se encuentre siempre 
+al fondo de la página, tanto con poco contenido en la página como con mucho.
+Fondo empleando un gradient de color --clr-fondo hasta el 50%
+#078dab hasta el 100%
+Tamaño del fondo a 400% de alto y de ancho
+Tiene una animación infinita llamada gradient de 16s de duración con curva ease
+*/
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(var(--clr-fondo) 50%, #078dab 100%);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 16s ease infinite;
+  -o-animation: gradient 16s ease infinite;
+  -moz-animation: gradient 16s ease infinite;
+  animation: gradient 16s ease infinite;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+/* cabecera fija */
+.header {
+  /* position: fixed; Mejor con stycky ya que así la cabecera ocupa espacio y no sube para arriba la portada
+  display: flex; */
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__menu {
+  flex: 1;
+  display: flex;
+}
+
+.header__menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+/* Para hacer un efecto al pasar sobre cada opción del menú (menu__item)
+tenemos dentro de cada li un enlace y un span que es con lo que haremos
+la barra que hace el efecto al pasar sobre la opción*/
+/* Estilos al pasar sobre la barra: color fondo
+--clr-fondo-adicional borde redondeado.
+Duración de la animación 0.3s con una curva bezier lento al entrar, rápido al salir*/
+
+.barra {
+  width: 0;
+  height: 6px;
+
+  background-color: var(--clr-fondo);
+  transition: all 0.3s ease-in;
+}
+
+.menu__item:hover .barra {
+  width: 100%;
+  background-color: var(--clr-fondo-adicional);
+  border-radius: var(--radius);
+}
+
+/* Boton donar: sombra con un blur de 10px, desplazamiento de 0 del eje X y 4px del
+eje Y, color rgb(72,3,3)
+texto --clr-btn-donar-texto*/
+button.btn-donar {
+  align-self: center;
+  box-shadow: 0 4px 10px rgb(72, 3, 3);
+  border: 1px solid var(--clr-btn-donar);
+}
+/*Color del svg del botón donar --clr-btn-donar-texto. Ten en cuenta que usa la animación latir.*/
+.btn-donar svg {
+  animation: latir 1s linear infinite;
+}
+
+/* al pasar sobre el boton btn-donar cambia: 
+color de fondo y color del borde a --clr-btn-donar-oscuro
+color texto a blanco
+Color del svg a blanco*/
+.btn-donar:hover {
+  background-color: var(--clr-btn-donar-oscuro);
+  border-color: var(--clr-btn-donar-oscuro);
+  color: white;
+  /* falta */
+  fill: white;
+}
+/*=====  End of Estilos de la cabecera  ======*/
+
+/*=============================================
+=            Estilos portada            =
+=============================================*/
+
+section.portada {
+  background-image: url(../../img/fondo.jpg);
+  max-height: 500px;
+  /* Está bien, pero siempre es bueno poner una opción de color por si no carga la imagen*/
+  background: var(--clr-fondo) url(../../img/fondo.jpg) no-repeat;
+  background-size: cover;
+  height: 60vh;
+  /* para centrar el texto*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/*=====  End of Estilos portada  ======*/
+
+/*=============================================
+=            Estilos boton donar del lateral            =
+=============================================*/
+/* El botón de donar aparece también de forma fija en la ventana al 80% de la cabecera
+y a 1.5rem de la izquierda. */
+#btnDonar2 {
+  transform-origin: left;
+  transform: rotate(-90deg);
+  position: fixed;
+  top: 80%;
+  left: 1.5rem;
+  border-top-left-radius: unset;
+  border-top-right-radius: unset;
+}
+/*=============================================
+=            Estilos de los articulos           =
+=============================================*/
+
+/* Los articulos del main impares tendran como color de fondo --clr-fondo-secundario*/
+/* main:first-of-type article {
+  background-color: var(--clr-fondo-secundario);
+} */
+main > article:nth-of-type(odd) {
+  background-color: var(--clr-fondo-secundario);
+}
+/* Artículo .doscolumnas divide el article en dos columnas de tamaño mínimo 280px de ancho y máximo todo el espacio disponible. Usa maquetación esponsive sin usar media queries.
+Separación entre elementos 1rem*/
+article.doscolumn {
+  /*display: flex;
+  min-width: 280px;????¿¿¿¿¿¿
+  max-width: 100%; ????
+  padding: 1rem; ??? */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Las imágenes y videos de los article.doscolumn
+ancho máximo de 580px
+sombra blur de 10px con desplazamiento tanto en X como Y de 4px*/
+.doscolumn .doscolumn__multimedia {
+  justify-self: center;
+}
+.doscolumn .doscolumn__multimedia {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  max-width: 586px;
+  width: 100%;
+}
+
+/*=====  End of Estilos de los articulos  ======*/
+
+/*=============================================
+=            Estilos de las cards            =
+=============================================*/
+/* Posicionamos los card de forma responsive con ancho máximo de cada item del elemento cards de hasta 435px*/
+.cards {
+  display: grid; /* con grid a secas no haces nada*/
+  grid-template-columns: repeat(auto-fit, minmax(auto, 435px));
+  justify-content: center;
+  justify-items: center;
+  gap: 1rem;
+}
+/* Separación entre los elementos del .cards__card 1rem*/
+.cards__card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+/* La imagen debe ocupar el espacio sobrante del card*/
+.cards__card .card__image {
+  flex: 1;
+  object-fit: cover;
+}
+
+/*=====  End of Estilos de las cards  ======*/
+
+/*=============================================
+=            Media queries            =
+=============================================*/
+/* media querie para pantallas de hasta 720px
+para cambiar el valor de la variable --font-size a 12px
+logo de la cabecera ancho y alto de 100px
+Se oculta el menú de la cabecera (header__menu)
+Fuente del h2 de la portada 2.2rem*/
+@media screen and (max-width: 720px) {
+  :root {
+    --font-size: 12px;
+  }
+  header .btn-donar,
+  .header__menu {
+    display: none;
+  }
+  .header__logo {
+    height: 100px;
+    width: 100px;
+  }
+
+  .portada h2 {
+    font-size: 2.2rem;
+  }
+}
