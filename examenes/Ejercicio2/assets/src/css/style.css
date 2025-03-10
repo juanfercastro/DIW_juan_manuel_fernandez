@@ -24,7 +24,15 @@ Tiene una animación infinita llamada gradient de 16s de duración con curva eas
 */
 
 body {
-  
+  min-height: 100vh;
+  background: linear-gradient(var(--clr-fondo) 50%, #078dab 100%);
+  background-size: 400% 400%;
+  animation: gradient 16s ease infinite;
+  display: flex;
+  flex-direction: column;
+}
+main{
+  flex: 1;
 }
 
 /*=============================================
@@ -32,11 +40,21 @@ body {
 =============================================*/
 /* cabecera fija */
 .header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 nav.header__menu {
+  flex: 1;
+  display: flex;
 }
 nav.header__menu ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Para hacer un efecto al pasar sobre cada opción del menú (menu__item)

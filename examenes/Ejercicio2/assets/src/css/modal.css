@@ -31,7 +31,7 @@ dialog{
 
 @keyframes modal {
   from{
-    top: -50vw;
+    top: -50vh;
     opacity: 0;
   }
   to{
@@ -65,13 +65,21 @@ dialog h2 svg{
 /*Para separar el label de un radio con el siguiente input radio
 añadiremos un margen a la izquierda de 1rem a todos los campos 
 .form__campo de tipo radio SALVO el primero*/
-
+.form__campo input[type="radio"]:not(:first-of-type){
+  margin-left: 1rem;
+}
 /* Al seleccionar el radio el label correspondiente se pone en negrita (600)*/
-
+.form__campo input[type="radio"]:checked + label{
+  font-weight: 600;
+}
 /* .cantidad hace referencia al fieldset que contiene cada bloque span con la clase
 cantidad__option. Debes maquetar este componente de forma que los items que contiene seab responsive sin usar media queries
 y teniendo como ancho de cada item 80px.*/
 .cantidad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 80px);
+  gap: 0.2rem;
+  justify-content: center;
 }
 /* cantidad__opcion es un span que contiene un input de tipo radio
 y una etiqueta. Vamos a estilar este radio para que no se vea el radio (.cantidad__input--radio) y
@@ -79,15 +87,29 @@ lo que se vea es la etiqueta a la que está vinculada */
 /* Para el span que contiene la cantidad (.cantidad__opcion) color de texto
 #222832 y relleno de 5px*/
 .cantidad__opcion {
+  color: #222832;
+  fill: 5px;
 }
 
 .cantidad__opcion--radio {
+  width: 0;
+  position: absolute;
 }
 /* Cambiamos los estilos del label al estar el radio seleccionado, para ello
 color de fondo #c6c6c5, color texto y borde variable --clr-modal
 negrita de 500 */
+.cantidad__opcion input[type="radio"]:checked + label{
+  background-color: #c6c6c5;
+  color: var(--clr-modal);
+  border-color: var(--clr-modal);
+}
 
 /* En el caso de que el los campos sean invalidos color de fondo orange, solo cuando tenga contenido */
-
+.form__campo input:not(:placeholder-shown):invalid{
+  background-color: orange;
+}
 /* mira el video y aplica las reglas necesarias para el botón */
+.form__btn{
+  width: 100%;
+}
 /*=====  End of Estilos de la ventana modal donar  ======*/
