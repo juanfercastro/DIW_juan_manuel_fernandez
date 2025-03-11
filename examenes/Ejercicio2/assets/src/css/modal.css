@@ -22,42 +22,42 @@ Crea una animación para que aparezca la ventana modal al visualizarla
   - A ser totalmente opaca
 Duración de la animación 0.5s
 función de temporización de la animación curva bezier: rápido al entrar y salir*/
+
+/*Telón de fondo de la ventan modal color: #078dab6a */
+
+/*Color del svg del h1 variable --clr-modal*/
+
+/*Botón de la ventana de diálogo fuente 1.5rem, color fondo #fafafa posicionado*/
 dialog{
   animation: modal 0.5s ease-in-out;
-  -moz-animation: modal 0.5s ease-in-out;
   -o-animation: modal 0.5s ease-in-out;
+  -moz-animation: modal 0.5s ease-in-out;
   -webkit-animation: modal 0.5s ease-in-out;
+}
+dialog::backdrop{
+  background-color: #078dab6a;
+}
+dialog svg{
+  fill: var(--clr-modal);
+}
+dialog button{
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 1.5em;
+  border: none;
+  background-color: #fafafa;
 }
 
 @keyframes modal {
   from{
-    top: -50vh;
+    top: -50vw;
     opacity: 0;
   }
   to{
     opacity: 1;
   }
 }
-/*Telón de fondo de la ventan modal color: #078dab6a */
-dialog::backdrop{
-  background-color: #078dab6a;
-}
-
-/*Color del svg del h1 variable --clr-modal*/
-dialog h2 svg{
-  fill: var(--clr-modal);
-}
-/*Botón de la ventana de diálogo fuente 1.5rem, color fondo #fafafa posicionado*/
-
-.dialog__btn--cerrar{
-  border: none;
-  position: absolute;
-  top: 2%;
-  right: 2%;
-  font-size: 1.5rem;
-  background-color: #fafafa;
-}
-
 /*=============================================
 =            Estilos del formulario            =
 =============================================*/
@@ -78,7 +78,7 @@ y teniendo como ancho de cada item 80px.*/
 .cantidad {
   display: grid;
   grid-template-columns: repeat(auto-fit, 80px);
-  gap: 0.2rem;
+  gap: 0.01rem;
   justify-content: center;
 }
 /* cantidad__opcion es un span que contiene un input de tipo radio
@@ -87,8 +87,8 @@ lo que se vea es la etiqueta a la que está vinculada */
 /* Para el span que contiene la cantidad (.cantidad__opcion) color de texto
 #222832 y relleno de 5px*/
 .cantidad__opcion {
+  padding: 5px;
   color: #222832;
-  fill: 5px;
 }
 
 .cantidad__opcion--radio {
@@ -98,14 +98,15 @@ lo que se vea es la etiqueta a la que está vinculada */
 /* Cambiamos los estilos del label al estar el radio seleccionado, para ello
 color de fondo #c6c6c5, color texto y borde variable --clr-modal
 negrita de 500 */
-.cantidad__opcion input[type="radio"]:checked + label{
+.cantidad input[type="radio"]:checked + label{
   background-color: #c6c6c5;
   color: var(--clr-modal);
   border-color: var(--clr-modal);
+  font-weight: 500;
 }
 
 /* En el caso de que el los campos sean invalidos color de fondo orange, solo cuando tenga contenido */
-.form__campo input:not(:placeholder-shown):invalid{
+#causa:not(:placeholder-shown):invalid{
   background-color: orange;
 }
 /* mira el video y aplica las reglas necesarias para el botón */

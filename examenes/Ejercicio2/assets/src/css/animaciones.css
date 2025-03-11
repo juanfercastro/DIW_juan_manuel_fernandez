@@ -17,24 +17,25 @@ Estilos de las animaciones
 el corazón se escalará 1.4 veces su tamaño al 50% de la animación
 Crea las reglas de animación para que sea compatible con todos los navegadores*/
 @keyframes latir {
-   50% {
-      transform: scale(1.4);
-   }
-}
-@-o-keyframes latir{
-   50% {
+   50%{
       transform: scale(1.4);
    }
 }
 
-@-moz-keyframes latir{
-   50% {
+@-o-keyframes latir {
+   50%{
       transform: scale(1.4);
    }
 }
 
-@-webkit-keyframes latir{
-   50% {
+@-moz-keyframes latir {
+   50%{
+      transform: scale(1.4);
+   }
+}
+
+@-webkit-keyframes latir {
+   50%{
       transform: scale(1.4);
    }
 }
@@ -46,40 +47,40 @@ Crea las reglas de animación para que sea compatible con todos los navegadores*
 /* Animación del gradiente de la página*/
 @keyframes gradient {
    0%,
-   100% {
+   100%{
       background-position: 5% 0%;
    }
-   50% {
+   50%{
       background-position: 96% 100%;
    }
 }
 
 @-o-keyframes gradient {
    0%,
-   100% {
+   100%{
       background-position: 5% 0%;
    }
-   50% {
+   50%{
       background-position: 96% 100%;
    }
 }
 
 @-moz-keyframes gradient {
    0%,
-   100% {
+   100%{
       background-position: 5% 0%;
    }
-   50% {
+   50%{
       background-position: 96% 100%;
    }
 }
 
 @-webkit-keyframes gradient {
    0%,
-   100% {
+   100%{
       background-position: 5% 0%;
    }
-   50% {
+   50%{
       background-position: 96% 100%;
    }
 }

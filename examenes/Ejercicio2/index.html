@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <!-- Debes realizar las correcciones necesasrias y añadir atributos necesarios para que sea accesible
 NO AÑADAS NI CLASES NI IDES-->
 
@@ -14,7 +14,7 @@ NO AÑADAS NI CLASES NI IDES-->
 <body>
   <header class="header">
     <a href="index.html" class="header__logo">
-      <img src="./assets/img/logo_oceanblue.png" alt="Logo" />
+      <img src="./assets/img/logo_oceanblue.png" alt="Enlace a la pagina de inicio" />
     </a>
     <nav class="header__menu">
       <ul>
@@ -45,6 +45,12 @@ NO AÑADAS NI CLASES NI IDES-->
       <span>Dona</span>
     </button>
   </header>
+  <section class="portada fondo-titulo">
+    <p class="subtituo">Nuestra misión</p>
+    <h2>Defender, conservar y proteger nuestros océanos</h2>
+  </section>
+
+  <main>
     <!-- Ventana de diálogo modal. Debes hacer correciones en el código html-->
     <dialog id="donar">
       <!-- este botón cierra la ventana modal-->
@@ -108,17 +114,13 @@ NO AÑADAS NI CLASES NI IDES-->
           <label for="causa">Destino de la donación</label>
           <!-- campo de texto que solo admite letras con tildes y sin ellas, maýusculas y minúsculas y espacio ñ y ç, mínimo 2 carácteres y máximo 40-->
           <input type="text" name="causa" id="causa"
-            title="Causa de la donación. Caracteres con espacios y comas. Máximo 40 Caracteres" 
-            pattern="[a-zA-ZñÑáÁéÉíÍúÚóÓüÜçÇ, ]{2,40}" placeholder="Eliminacion de pellets en las playas" required>
+            title="Causa de la donación. Caracteres con espacios y comas. Máximo 40 Caracteres"
+            pattern="[a-zA-ZáÁéÉíÍóÓúÚñÑçÇ, ]{2,40}" placeholder="Retirar pellets de las playas"/>
         </p>
         <input type="submit" value="Donar" class="btn form__btn" />
       </form>
     </dialog>
     <!-- Fin ventana de diálogo modal-->
-    <section class="portada fondo-titulo">
-      <p class="subtituo">Nuestra misión</p>
-      <h2>Defender, conservar y proteger nuestros océanos</h2>
-    </section>
     <button onclick="window.donar.showModal()" href="" class="btn btn-donar" id="btnDonar2">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path
@@ -126,7 +128,6 @@ NO AÑADAS NI CLASES NI IDES-->
       </svg>
       <span>Dona</span>
     </button>
-    <main>
       <article class="doscolumn" id="nosotros">
         <section class="doscolumn__texto">
           <h2>Quienes Somos</h2>
@@ -153,15 +154,15 @@ NO AÑADAS NI CLASES NI IDES-->
           <section class="cards__card">
             <!-- añade el video con su portada portadaPellet.webp, subtitulo activado por defecto y texto alternativo por si el
         navegador no soporta html5-->
-            <video controls poster="./assets/img/portadaPellet.webp" class="card__image">
-                <source src="./assets/videos/videoplayback.mp4" type="video/mp4">
-                <track kind="subtitles" label="Subtitulos" src="./assets/videos/subtitulo_es.vtt" srclang="es" default/>
-                <!--Para navegadores antiguos-->
-                <video src="./assets/videos/videoplayback.mp4" width="640" height="427"></video>
-                <p>
-                  <em>Para reproducir este video su navegador debe soportar HTML5</em>
-                </p>
-            </video>
+        <video controls poster="./assets/img/portadaPellet.webp" class="card__image">
+          <source src="./assets/videos/videoplayback.mp4" type="video/mp4">
+          <track kind="subtitles" label="Subtitulos" src="./assets/videos/subtitulo_es.vtt" srclang="es" default></track>
+          <!--Etiqueta por si no soporta HTML5-->
+          <video src="./assets/videos/videoplayback.mp4" width="640" height="427"></video>
+          <p>
+            <em>Para reproducir el video el navegador necesita soportar HTML5</em>
+          </p>
+        </video>
             <button class="btn">Participar</button>
           </section>
           <section class="cards__card">
@@ -172,7 +173,7 @@ NO AÑADAS NI CLASES NI IDES-->
           </section>
           <section class="cards__card">
             <figure class="card__image">
-              <img src="./assets/img/salvar.jpg">
+              <img src="./assets/img/salvar.jpg" alt="">
             </figure>
             <button class="btn">Participar</button>
           </section>
