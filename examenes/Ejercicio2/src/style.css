@@ -82,10 +82,10 @@ a:not(nav a){
 =            Estilos de la cabecera            =
 =============================================*/
 header {
+  width: 100%;
   max-width: 2560px;
   padding: 0 1rem;
-  position: sticky;
-  top: 0;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   background-color: rgba(10, 9, 24, 0.5);
@@ -235,7 +235,7 @@ El texto de la portada ocupará como máximo el 90% del contenedor para móvi y 
    */
 .cards{
   display: grid;
-  grid-template-columns: repeat(auto-fit, 370px);
+  grid-template-columns: repeat(auto-fit, minmax(auto,370px));
   justify-items: center;
   gap: 1rem;
 }
