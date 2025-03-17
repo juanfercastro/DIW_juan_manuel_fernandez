@@ -1,0 +1,298 @@
+@charset "UTF-8";
+/* importa las fuentes y el resto de hojas de estilos */
+@import url("modal.css");
+@import url("animaciones.css");
+@import url("fonts.css");
+/*=============================================
+=            Estilos generales            =
+=============================================*/
+*,*::after,*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-secundario: #c09551;
+  --color-secundario-claro: #f4bc63ac;
+
+  --color-secundario-oscuro: #7F632E;
+  --color-primario: rgb(50, 50, 63);
+  --color-fondo: rgba(10, 9, 24, 0.895);
+  --color-fondo-2: rgba(10, 9, 24, 0.895);
+  --color-fondo-claro: #edf2f8;
+
+  --size-h1: 2.5rem;
+  --fuente-secundaria: 'Merriweather', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  --fuente-primaria: 'Times New Roman', Times, serif;
+  /* define una variable para las transiciones de forma que se aplique a todas
+  las propiedades con una duración de 0.6s y curva: comenzará lentamente, será 
+  más rápido en el medio de la animación y luego terminará lentamente
+  Empleada en: la barra del menú, en los botones, en los iconos (clase icono)*/
+  --transition: all 0.6s ease-in-out;
+  font: 14px/1.6 var(--fuente-primaria);
+}
+
+html {
+  background-color: var(--color-primario);
+}
+
+body {
+  max-width: 2560px;
+  color: var(--color-primario);
+  background-color: #fafafa;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.icono {
+  max-width: 30px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--fuente-secundaria);
+}
+
+h1 {
+  font-size: var(--size-h1);
+  color: white;
+  letter-spacing: 4px;
+}
+
+/* h2 tamaño fuente h1 menos 1/4 del tamaño de la fuente de h1*/
+h2{
+  font-size: calc(var(--size-h1) - var(--size-h1) / 4);
+}
+
+/* h3 tamaño fuente h1 menos 1/2 del tamaño de la fuente de h1*/
+h3{
+  font-size: calc(var(--size-h1) - var(--size-h1) / 2);
+}
+/* separador es una linea punteada de color --color-secundario empleada solamente en diseño
+móvil (hasta 720px) para separar el contenido del pie. Ver video */
+
+/* los enlaces que no son hijos de un nav tendrán como color de texto color-secundario*/
+a:not(nav a){
+  color: var(--color-secundario);
+}
+/*=====  End of Estilos generales  ======*/
+
+
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+header {
+  max-width: 2560px;
+  padding: 0 1rem;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(10, 9, 24, 0.5);
+}
+
+.logo {
+  max-width: 100px;
+}
+
+nav > ul{
+  list-style: none;
+}
+
+nav.menu__header{
+  margin: auto;
+}
+
+nav.menu__header ul{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* fuente de las obciones del menú 1.7rem, separación entre las letras 2px.*/
+nav a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+}
+/* Al pasar sobre cada opción del menú aparece una barra de alto 4px. */
+.menu__item{
+  display: flex;
+  flex-direction: column;
+}
+
+.barra{
+  width: 0;
+  height: 4px;
+  align-self: center;
+  transition: var(--transition);
+}
+
+.menu__item:hover .barra{
+  width: 100%;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+main {
+  width: 100%;
+  padding-bottom: 4rem;
+}
+
+#nosotros h3 {
+  color: var(--color-secundario-oscuro);
+}
+
+/* para todos los h2 del main,
+ que no estén después de un h1 color color-primario y alineado al centro
+*/
+main h2:not(h1+h2){
+  color: var(--color-primario);
+  text-align: center;
+}
+/* tanto #nosotros como #visitas tendrán un padding de 1rem y un áncho máximo
+de 1400px*/
+#nosotros, #visitas{
+  padding: 1rem;
+  max-width: 1400px;
+}
+
+
+/*=============================================
+=            Estilos de la portada            =
+=============================================*/
+
+/*La portada tendrá como fondo la imagen puertodeportivo-vilanova.jpg
+y el gradiente
+Fuente del texto 1.2rem
+
+El texto de la portada ocupará como máximo el 90% del contenedor para móvi y dede
+720px el 70%*/
+
+.portada {
+  height: 939px;
+  background: linear-gradient(rgba(11, 10, 31, 0.712), rgba(11, 10, 31, 0.726));
+  background-image: url(../assets/img/puertodeportivo-vilanova.jpg);
+  background-size: cover;
+  font-size: 1.2rem;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.portada h1,.portada h2,.portada p{
+  max-width: 70%;
+}
+
+
+/*=====  End of Estilos de la portada  ======*/
+
+
+
+
+/*=============================================
+=            Estilos nosotros - servicios         =
+=============================================*/
+#nosotros, #servicios {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  text-align: left;
+  gap: .5rem;
+}
+
+
+
+/*=============================================
+=            Estilos de las cards            =
+=============================================*/
+/* ancho máximo 1400px
+   Responsive sin emplear media queries.
+   Tamaño máximo de la card 370px
+   
+   Al cargar la página se ejecuta una animación llamada rotar con una duración
+   de .4s lineal que rota cada una de las cards
+
+   Al pasar sobre cada card: borde de 3px de color --color-secundario
+
+   ancho máximo de la imagen de cada card 55%
+
+   Boton 1.5rem transparente.
+   */
+.cards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 370px);
+  justify-items: center;
+  gap: 1rem;
+}
+
+.cards__card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cards__card figure img{
+  max-width: 55%;
+  
+}
+
+.cards__card button{
+  size: 1.5rem;
+}
+
+/*=====  End of Estilos del main  ======*/
+
+
+
+/*=============================================
+=            Estilos de visitas            =
+=============================================*/
+/* El primer span del li tendrá como tamaño de fuente 2rem */
+
+/* los li tienen un ancho de 200px */
+
+/* .sbub-info espaciado 3px peso de la fuente 600*/
+
+/* SOLO PARA MOVIL, tiene que aparecer antes de cada li salvo el primero
+el ancla (anchor.svg). Tiene unas dimensiones de 2x2 rem */
+
+
+
+
+
+
+/*=============================================
+=            Estilos del footer            =
+=============================================*/
+footer {
+  background-color: var(--color-fondo-2);
+  padding: 1rem;
+}
+
+
+
+/*=====  End of Estilos del footer  ======*/
+
+
+/*=============================================
+=            Media Queries            =
+=============================================*/
+/* Para pantallas desde 720px. Fuente 16px tamaño h1 4rem */
+
+/*=====  End of Media Queries  ======*/
