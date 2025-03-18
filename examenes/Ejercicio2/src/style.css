@@ -18,7 +18,7 @@
 
   --color-secundario-oscuro: #7F632E;
   --color-primario: rgb(50, 50, 63);
-  --color-fondo: rgba(10, 9, 24, 0.895);
+  --color-fondo: rgba(10, 9, 24, 0.479);
   --color-fondo-2: rgba(10, 9, 24, 0.895);
   --color-fondo-claro: #edf2f8;
 
@@ -33,6 +33,10 @@
   font: 14px/1.6 var(--fuente-primaria);
 }
 
+img{
+  width: 100%;
+  object-fit: cover;
+}
 html {
   background-color: var(--color-primario);
 }
@@ -43,10 +47,12 @@ body {
   background-color: #fafafa;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  width: 100%;
 }
 
 .icono {
-  max-width: 30px;
+  width: 30px;
 }
 
 h1, h2, h3, h4 {
@@ -70,6 +76,9 @@ h3{
 }
 /* separador es una linea punteada de color --color-secundario empleada solamente en diseño
 móvil (hasta 720px) para separar el contenido del pie. Ver video */
+.separador{
+  border-bottom: 1px dotted var(--color-secundario);
+}
 
 /* los enlaces que no son hijos de un nav tendrán como color de texto color-secundario*/
 a:not(nav a){
@@ -87,8 +96,10 @@ header {
   padding: 0 1rem;
   position: fixed;
   display: flex;
-  justify-content: space-between;
-  background-color: rgba(10, 9, 24, 0.5);
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-fondo)
 }
 
 .logo {
@@ -99,14 +110,11 @@ nav > ul{
   list-style: none;
 }
 
-nav.menu__header{
-  margin: auto;
-}
-
 nav.menu__header ul{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
   gap: 1rem;
 }
 
@@ -144,6 +152,7 @@ nav a{
 =============================================*/
 main {
   width: 100%;
+  max-width: 100vw;
   padding-bottom: 4rem;
 }
 
@@ -179,19 +188,19 @@ El texto de la portada ocupará como máximo el 90% del contenedor para móvi y 
 
 .portada {
   height: 939px;
-  background: linear-gradient(rgba(11, 10, 31, 0.712), rgba(11, 10, 31, 0.726));
-  background-image: url(../assets/img/puertodeportivo-vilanova.jpg);
+  background: linear-gradient(rgba(11, 10, 31, 0.712), rgba(11, 10, 31, 0.726)), url(../assets/img/puertodeportivo-vilanova.jpg);
   background-size: cover;
   font-size: 1.2rem;
   max-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   color: white;
 }
 
 .portada h1,.portada h2,.portada p{
-  max-width: 70%;
+  max-width: 90%;
 }
 
 
@@ -203,7 +212,7 @@ El texto de la portada ocupará como máximo el 90% del contenedor para móvi y 
 /*=============================================
 =            Estilos nosotros - servicios         =
 =============================================*/
-#nosotros, #servicios {
+#nosotros {
   padding: 1rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -215,6 +224,9 @@ El texto de la portada ocupará como máximo el 90% del contenedor para móvi y 
   gap: .5rem;
 }
 
+#servicios {
+  background-image: url(../assets/img/puertodeportivo-vilanova.jpg);
+}
 
 
 /*=============================================
@@ -234,26 +246,45 @@ El texto de la portada ocupará como máximo el 90% del contenedor para móvi y 
    Boton 1.5rem transparente.
    */
 .cards{
+  max-width: 1400px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(auto,370px));
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit,minmax(auto,370px));
+  justify-content: center;
   gap: 1rem;
+  padding: 1rem;
 }
 
 .cards__card{
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  height: 100%;
   gap: 1rem;
+  padding: 1rem;
+  text-align: center;
 }
 
-.cards__card figure img{
+.cards__card figure{
   max-width: 55%;
   
 }
 
+.cards__card:hover{
+  outline: 3px solid var(--color-secundario);
+}
 .cards__card button{
-  size: 1.5rem;
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--color-secundario);
+  color: var(--color-primario);
+  transition: var(--transition);
+}
+.cards__card button:hover{
+  background-color: var(--color-secundario);
+  color: white;
 }
 
 /*=====  End of Estilos del main  ======*/
@@ -272,9 +303,46 @@ El texto de la portada ocupará como máximo el 90% del contenedor para móvi y 
 /* SOLO PARA MOVIL, tiene que aparecer antes de cada li salvo el primero
 el ancla (anchor.svg). Tiene unas dimensiones de 2x2 rem */
 
+#visitas{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
 
+#visitas ul{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 
+#visitas li{
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#visitas li:not(:first-of-type)::before{
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background-image: url(../assets/img/anchor.svg);
+}
+#visitas li span:first-of-type {
+  font-size: 2rem;
+}
 
+.sub-info{
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: var(--color-secundario-oscuro);
+  text-transform: uppercase;
+}
 
 
 /*=============================================
@@ -283,9 +351,22 @@ el ancla (anchor.svg). Tiene unas dimensiones de 2x2 rem */
 footer {
   background-color: var(--color-fondo-2);
   padding: 1rem;
+  display: flex;
+  flex-flow: column-reverse wrap;
+  justify-content: center;
+  color: white;
 }
 
-
+footer > p {
+  align-self: center;
+}
+.redes{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
 
 /*=====  End of Estilos del footer  ======*/
 
@@ -294,5 +375,29 @@ footer {
 =            Media Queries            =
 =============================================*/
 /* Para pantallas desde 720px. Fuente 16px tamaño h1 4rem */
+@media screen and (min-width: 720px) {
+  :root{
+    font-size: 16px;
+    --size-h1: 4rem;
+  }
+  
+  header, footer{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .portada h1,.portada h2,.portada p{
+    max-width: 70%;
+  }
+
+  .separador{
+    display: none;
+  }
+  #visitas li:not(:first-of-type)::before{
+    /* display: none; */
+    width: 0;
+    height: 0;
+  }
+
+}
 
 /*=====  End of Media Queries  ======*/
